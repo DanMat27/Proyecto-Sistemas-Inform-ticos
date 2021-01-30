@@ -1,0 +1,35 @@
+{% extends "mouse_cat/base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+<div id="content">
+    <!--<h1 id="index_title">Service catalog</h1>-->
+
+    <div id="foto">
+        <img id="jerry" src="{% static 'images/jerry.png' %}"></img>
+    </div>
+
+    <div id="botones_menu">
+        {% if request.user.is_authenticated %}
+            <a id="limite" href="{% url 'logout' %}"><button id="botonMenu" type="button">Logout</button></a>
+            <a id="limite" href="{% url 'create_game' %}"><button id="botonMenu" type="button">Create game</button></a>
+            <a id="limite" href="{% url 'join_game' %}"><button id="botonMenu" type="button">Join game</button></a>
+            <a id="limite" href="{% url 'select_game' %}"><button id="botonMenu" type="button">Select game</button></a>
+            <a id="limite" href="{% url 'show_game' %}"><button id="botonMenu" type="button">Show selected game and play</button></a>
+            <a id="limite" href="{% url 'repeat_game' %}"><button id="botonMenu" type="button">Choose and repeat game</button></a>
+            <a id="limite" href="{% url 'counter' %}"><button id="botonMenu" type="button">Counter</button></a>
+        {% else %}
+            <a id="limite" href="{% url 'login' %}"><button id="botonMenu" type="button">Login</button></a>
+            <a id="limite" href="{% url 'signup' %}"><button id="botonMenu" type="button">Signup</button></a>
+            <a id="limite" href="{% url 'counter' %}"><button id="botonMenu" type="button">Counter</button></a>
+        {% endif %}
+
+    </div>
+
+    <div id="foto">
+        <img id="tom" src="{% static 'images/tom.png' %}"></img>
+    </div>
+
+</div>
+{% endblock content %}

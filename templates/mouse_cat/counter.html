@@ -1,0 +1,11 @@
+{% extends "mouse_cat/base.html" %}
+
+{% block content %}
+<div id="counter">
+    <div>
+        <p id="sessionc">Counter session: <b>{{ counter_session }}</b></p>
+        <p>Counter error: <b>{{ counter_global }}</b></p>
+        <p id="return_home"><a href="{% url 'landing' %}">Return to homepage</a></p>
+    </div>
+</div>
+{% endblock content %}

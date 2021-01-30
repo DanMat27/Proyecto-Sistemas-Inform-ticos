@@ -1,0 +1,20 @@
+{% extends "mouse_cat/base.html" %}
+
+{% block content %}
+<h1 id="login">Login</h1>
+<div>
+    <div id="login_contenido">
+        Log in to continue: <br>
+        <form id="login_form" method="post" action="{% url 'login' %}">
+            <div id="login_form2">
+                {% csrf_token %}
+                {{ user_form.as_p }}<br/>
+                <input type="hidden" name="return_service" value="{{ return_service }}" />
+                <input id="login_boton" type="submit" value="Log-In"/>
+            </div>
+        </form>
+        <p id="return_home"><a href="{% url 'landing' %}">Return to homepage</a></p>
+    </div>
+
+</div>
+{% endblock content %}

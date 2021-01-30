@@ -1,0 +1,25 @@
+Pareja 8: Daniel Mateo Moreno
+          Aitor Melero Picón
+Grupo 1363
+
+Ejecutar tests:
+  > python3 manage.py test datamodel.tests_models.GameModelTests #Test Game de datamodel
+  > python3 manage.py test datamodel.tests_models.MoveModelTests #Test Move de datamodel
+  > python3 manage.py test datamodel.tests_models.CounterModelTests #Test Counter de datamodel
+  > python3 manage.py test logic.tests_functon #Todos los tests function de logic
+  > python3 manage.py test logic.tests_services_P4 #Todos los tests services de logic de la P4
+  > python3 tests_additional_P4 #Todas las pruebas de GameEndTests pedidas
+
+Url de Heroku:
+  > https://calm-reaches-82781.herokuapp.com/
+
+Antes de nada:
+  > Crear BD ratongato
+  > Hacer makemigrations, migrate y superuser
+  > Ya se puede hacer el runserver local
+
+
+- CSS, JS e imágenes utilizadas se encuentran en la carpeta static.
+- views.py contiene todos los servicios pedidos en la práctica.
+- models.py contiene todos los modelos de datos (hemos añadido el dato winner a el modelo de game para saber quien ha ganado).
+- forms.py contiene todos los formularios utilizados (hemos convertido el de move en hidden).

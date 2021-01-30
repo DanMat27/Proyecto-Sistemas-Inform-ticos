@@ -1,0 +1,39 @@
+{% extends "mouse_cat/base.html" %}
+
+{% block content %}
+<div id="repeat_game">
+    <h1>Repeat game</h1>
+
+    <p id="as_cat">
+        {% if as_cat %}
+            <p id="yes">Games as cat: </p></br>
+            {% for game in as_cat %}
+                {% if game.cat_turn %}
+                    <a href="{% url 'repeat_game' game.id %}"><button id="botonSelect" type="button">Game: {{ game.id }} &nbsp &nbsp Cat: You VS Mouse: {{ game.mouse_user }} &nbsp &nbsp Status: {{ game.status }}</button></a>
+                {% else %}
+                    <a href="{% url 'repeat_game' game.id %}"><button id="botonSelect" type="button">Game: {{ game.id }} &nbsp &nbsp Cat: You VS Mouse: {{ game.mouse_user }} &nbsp &nbsp Status: {{ game.status }}</button></a>
+                {% endif %}
+            {% endfor %}
+        {%  else %}
+            <p id="no">No games as cat</p>
+        {% endif %}
+    </p>
+
+    <p id="as_mouse">
+        {% if as_mouse %}
+            <p id="yes">Games as mouse: </p></br>
+            {% for game in as_mouse %}
+                {% if game.cat_turn %}
+                    <a href="{% url 'repeat_game' game.id %}"><button id="botonSelect" type="button">Game: {{ game.id }} &nbsp &nbsp Cat: {{ game.cat_user }} VS Mouse: You &nbsp &nbsp Winner: {{ game.cat_user }}</button></a>
+                {% else %}
+                    <a href="{% url 'repeat_game' game.id %}"><button id="botonSelect" type="button">Game: {{ game.id }} &nbsp &nbsp Cat: {{ game.cat_user }} VS Mouse: You &nbsp &nbsp Winner: {{ game.cat_user }}</button></a>
+                {% endif %}
+            {% endfor %}
+        {%  else %}
+            <p id="no">No games as mouse</p>
+        {% endif %}
+    </p>
+    
+    <p id="return_home"><a href="{% url 'landing' %}">Return to homepage</a></p>
+</div>
+{% endblock content %}
