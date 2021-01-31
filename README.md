@@ -7,4 +7,4 @@ Aplicación web realizada sobre el framework de Django. Lenguaje Python.
 
 Aplicación web en Heroku: https://calm-reaches-82781.herokuapp.com/
 
-Autores: DanMat27 y Aitor Melero.
+Autores: Daniel Mateo y Aitor Melero.
